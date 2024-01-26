@@ -1,0 +1,33 @@
+<main class="form-signin text-center">
+  <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
+
+  <%= form_for "Login",
+    url: '/auth/google_oauth2',
+    method: :post,
+    data: {turbo: "false"} do |f| %>
+      <%= f.submit "Login", type: "image", src: url_for(asset_path('btn_google_signin_dark_normal_web@2x.png')) %>
+    <p class="mt-5 mb-3 text-muted">© 2021–2022</p>
+  <% end %><br />
+</main>
+
+<style type="text/css">
+  html,
+  body {
+    height: 100%;
+  }
+
+  body {
+    display: flex;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #f5f5f5;
+  }
+
+  .form-signin {
+    width: 100%;
+    max-width: 412px;
+    padding: 15px;
+    margin: auto;
+  }
+</style>

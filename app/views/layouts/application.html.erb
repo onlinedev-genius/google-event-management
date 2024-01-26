@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>EventManagement</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+
+    <link rel="stylesheet" href="https://ga.jspm.io/npm:flatpickr@4.6.9/dist/flatpickr.min.css">
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <% if user_signed_in? %>
+      <%= render partial: 'shared/header' %>
+    <% end %>
+
+    <%#-------------------------------------------------%>
+    <%# Main content                                    %>
+    <%#-------------------------------------------------%>
+    <div id="wrapper" class="container-fluid">
+      <div class="row">
+
+        <%#-------------------------------------------------%>
+        <%# Content                                         %>
+        <%#-------------------------------------------------%>
+        <main class="col-12 main pt-2" id="main-part">
+          <div class="container-lg">
+
+            <%#-------------------------------------------------%>
+            <%# Content header (page title/actions)             %>
+            <%#-------------------------------------------------%>
+            <%#= render partial: '/shared/content_header' %>
+
+            <div class="row">
+              <%#-------------------------------------------------%>
+              <%# Main content                                    %>
+              <%#-------------------------------------------------%>
+              <div class="col-12 px-0" id="content" data-hook>
+                <%= yield %>
+              </div>
+
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+  </body>
+</html>
